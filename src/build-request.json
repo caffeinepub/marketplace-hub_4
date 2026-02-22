@@ -1,0 +1,180 @@
+{
+  "kind": "build_request",
+  "title": "Add product reviews and ratings system",
+  "projectName": "Marketplace Hub",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-10",
+      "text": "Add a Review type to the backend data model with fields for reviewId (Text), productId (Text), buyerId (Principal), buyerName (Text), rating (1-5 stars as Nat8), comment (Text), and timestamp (Int)",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-user-yes"
+        ],
+        "quotes": [
+          "product reviews and ratings"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Review type is defined in backend/main.mo",
+        "Rating is constrained to values 1-5",
+        "All fields are properly typed and documented"
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "text": "Implement backend functions to create a review (addReview) requiring buyer authentication and verification that the buyer has purchased the product",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-user-yes"
+        ],
+        "quotes": [
+          "product reviews and ratings"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Only authenticated buyers can submit reviews",
+        "System verifies buyer has completed an order containing the product",
+        "Buyers can only review products they have purchased",
+        "Function returns success or appropriate error messages"
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "text": "Implement backend functions to retrieve reviews for a specific product (getProductReviews) and calculate average rating",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-user-yes"
+        ],
+        "quotes": [
+          "product reviews and ratings"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Function returns all reviews for a given product ID",
+        "Reviews are sorted by timestamp (newest first)",
+        "Average rating is calculated and returned alongside reviews",
+        "Functions are publicly accessible"
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "text": "Add review and rating display to the ProductDetail page showing individual reviews with star ratings, reviewer names, timestamps, and comments",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-user-yes"
+        ],
+        "quotes": [
+          "product reviews and ratings"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Reviews are displayed below product details on the ProductDetail page",
+        "Each review shows star rating visualization, reviewer name, timestamp, and comment",
+        "Average rating and total review count are prominently displayed",
+        "Empty state is shown when no reviews exist"
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "text": "Display average star rating and review count on ProductCard components in the catalog and search results",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-user-yes"
+        ],
+        "quotes": [
+          "product reviews and ratings"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Star rating visualization appears on each product card",
+        "Review count is displayed next to the rating",
+        "Rating display matches the warm earth tone design theme",
+        "Products without reviews show an appropriate indicator"
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "text": "Create a review submission form on the ProductDetail page that allows authenticated buyers who have purchased the product to submit a rating (1-5 stars) and written comment",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-user-yes"
+        ],
+        "quotes": [
+          "product reviews and ratings"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Form only appears for authenticated buyers who have purchased the product",
+        "Star rating selector allows choosing 1-5 stars with visual feedback",
+        "Comment text area has appropriate validation and character limits",
+        "Form submission shows loading states and success/error messages",
+        "Reviews list updates immediately after successful submission"
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "text": "Add React Query hooks for review operations including useProductReviews to fetch reviews and useAddReview mutation for submitting reviews",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-user-yes"
+        ],
+        "quotes": [
+          "product reviews and ratings"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Hooks follow existing patterns in frontend/src/hooks/useQueries.ts",
+        "Proper cache invalidation occurs after review submission",
+        "Loading and error states are properly handled",
+        "Hooks integrate with the actor from useActor"
+      ]
+    },
+    {
+      "id": "REQ-17",
+      "text": "Create reusable UI components for star rating display (read-only) and star rating input (interactive) following the warm earth tone design system",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-user-yes"
+        ],
+        "quotes": [
+          "product reviews and ratings"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Components use the existing color palette with terracotta, sage green, and cream tones",
+        "Star icons are visually clear and accessible",
+        "Interactive rating component provides hover and click feedback",
+        "Components are responsive and work on mobile devices"
+      ]
+    }
+  ],
+  "constraints": [
+    "Follow the existing single-actor backend architecture in backend/main.mo",
+    "Do not modify immutable frontend paths: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui",
+    "Maintain the warm earth tone design theme (terracotta, sage green, cream) throughout all new UI components",
+    "Use React Query for all backend data fetching and mutations",
+    "Follow existing authentication and authorization patterns"
+  ],
+  "nonGoals": [
+    "Review editing or deletion functionality",
+    "Review moderation or reporting features",
+    "Review helpfulness voting or flagging",
+    "Seller responses to reviews",
+    "Review verification badges",
+    "Review filtering or sorting options beyond timestamp",
+    "Review images or photo uploads"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

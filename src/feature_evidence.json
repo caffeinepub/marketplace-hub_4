@@ -1,0 +1,107 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-add-review-and-rating-display-to-the-productdetail-page-showing-individual-reviews-with-star-ratings-reviewer-names-timestamps-and-comments",
+      "featureTitle": "Add review and rating display to the ProductDetail page showing individual reviews with star ratings, reviewer names, timestamps, and comments",
+      "files": [
+        "frontend/src/pages/ProductDetail.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-13"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-display-average-star-rating-and-review-count-on-productcard-components-in-the-catalog-and-search-results",
+      "featureTitle": "Display average star rating and review count on ProductCard components in the catalog and search results",
+      "files": [
+        "frontend/src/components/products/ProductCard.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-14"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-review-submission-form-on-the-productdetail-page-that-allows-authenticated-buyers-who-have-purchased-the-product-to-submit-a-rating-1-5-stars-and-written-comment",
+      "featureTitle": "Create a review submission form on the ProductDetail page that allows authenticated buyers who have purchased the product to submit a rating (1-5 stars) and written comment",
+      "files": [
+        "frontend/src/components/products/ReviewForm.tsx",
+        "frontend/src/pages/ProductDetail.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-15"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-react-query-hooks-for-review-operations-including-useproductreviews-to-fetch-reviews-and-useaddreview-mutation-for-submitting-reviews",
+      "featureTitle": "Add React Query hooks for review operations including useProductReviews to fetch reviews and useAddReview mutation for submitting reviews",
+      "files": [
+        "frontend/src/hooks/useQueries.ts"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-16"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-reusable-ui-components-for-star-rating-display-read-only-and-star-rating-input-interactive-following-the-warm-earth-tone-design-system",
+      "featureTitle": "Create reusable UI components for star rating display (read-only) and star rating input (interactive) following the warm earth tone design system",
+      "files": [
+        "frontend/src/components/reviews/StarRating.tsx",
+        "frontend/src/components/reviews/StarRatingInput.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-17"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

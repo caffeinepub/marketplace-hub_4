@@ -1,0 +1,118 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-21T05:52:21.165Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 8,
+    "implemented": 5,
+    "items": [
+      {
+        "id": "REQ-10",
+        "summary": "Add a Review type to the backend data model with fields for reviewId (Text), productId (Text), buyerId (Principal), buyerName (Text), rating (1-5 stars as Nat8), comment (Text), and timestamp (Int)",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-11",
+        "summary": "Implement backend functions to create a review (addReview) requiring buyer authentication and verification that the buyer has purchased the product",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-12",
+        "summary": "Implement backend functions to retrieve reviews for a specific product (getProductReviews) and calculate average rating",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-13",
+        "summary": "Add review and rating display to the ProductDetail page showing individual reviews with star ratings, reviewer names, timestamps, and comments",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/ProductDetail.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/ProductDetail.tsx"
+        ]
+      },
+      {
+        "id": "REQ-14",
+        "summary": "Display average star rating and review count on ProductCard components in the catalog and search results",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/products/ProductCard.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/products/ProductCard.tsx"
+        ]
+      },
+      {
+        "id": "REQ-15",
+        "summary": "Create a review submission form on the ProductDetail page that allows authenticated buyers who have purchased the product to submit a rating (1-5 stars) and written comment",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/products/ReviewForm.tsx",
+          "frontend/src/pages/ProductDetail.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/products/ReviewForm.tsx",
+          "frontend/src/pages/ProductDetail.tsx"
+        ]
+      },
+      {
+        "id": "REQ-16",
+        "summary": "Add React Query hooks for review operations including useProductReviews to fetch reviews and useAddReview mutation for submitting reviews",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/hooks/useQueries.ts"
+        ],
+        "matchedFiles": [
+          "frontend/src/hooks/useQueries.ts"
+        ]
+      },
+      {
+        "id": "REQ-17",
+        "summary": "Create reusable UI components for star rating display (read-only) and star rating input (interactive) following the warm earth tone design system",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/reviews/StarRating.tsx",
+          "frontend/src/components/reviews/StarRatingInput.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/reviews/StarRating.tsx",
+          "frontend/src/components/reviews/StarRatingInput.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "backend/main.mo",
+    "backend/migration.mo",
+    "build-request.json",
+    "build-template/README.md",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/backend.d.ts",
+    "frontend/src/backend.ts",
+    "frontend/src/components/products/ProductCard.tsx",
+    "frontend/src/components/products/ReviewForm.tsx",
+    "frontend/src/components/reviews/StarRating.tsx",
+    "frontend/src/components/reviews/StarRatingInput.tsx",
+    "frontend/src/declarations/backend.did.d.ts",
+    "frontend/src/declarations/backend.did.js",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/pages/ProductDetail.tsx",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

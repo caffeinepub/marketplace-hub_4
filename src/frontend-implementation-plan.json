@@ -1,0 +1,103 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Add product reviews and ratings system",
+  "requirements": [
+    {
+      "id": "REQ-13",
+      "summary": "Add review and rating display to the ProductDetail page showing individual reviews with star ratings, reviewer names, timestamps, and comments",
+      "acceptanceCriteria": [
+        "Reviews are displayed below product details on the ProductDetail page",
+        "Each review shows star rating visualization, reviewer name, timestamp, and comment",
+        "Average rating and total review count are prominently displayed",
+        "Empty state is shown when no reviews exist"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/ProductDetail.tsx",
+          "operation": "modify",
+          "description": "Add reviews section below the product information that displays the list of reviews fetched via useProductReviews hook. Include average rating and total count prominently, and show an empty state when no reviews exist. Wire in the StarRating component for displaying each review's rating."
+        }
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "summary": "Display average star rating and review count on ProductCard components in the catalog and search results",
+      "acceptanceCriteria": [
+        "Star rating visualization appears on each product card",
+        "Review count is displayed next to the rating",
+        "Rating display matches the warm earth tone design theme",
+        "Products without reviews show an appropriate indicator"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/products/ProductCard.tsx",
+          "operation": "modify",
+          "description": "Add average rating and review count display to each ProductCard. Fetch average rating for each product using the getProductAverageRating backend capability. Use the StarRating component to display the rating visually, and show review count next to it. Include appropriate styling using the warm earth tone palette and handle products with no reviews gracefully."
+        }
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "summary": "Create a review submission form on the ProductDetail page that allows authenticated buyers who have purchased the product to submit a rating (1-5 stars) and written comment",
+      "acceptanceCriteria": [
+        "Form only appears for authenticated buyers who have purchased the product",
+        "Star rating selector allows choosing 1-5 stars with visual feedback",
+        "Comment text area has appropriate validation and character limits",
+        "Form submission shows loading states and success/error messages",
+        "Reviews list updates immediately after successful submission"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/products/ReviewForm.tsx",
+          "operation": "create",
+          "description": "Create a review submission form component that allows authenticated buyers who have purchased the product to submit a rating and comment. Use the StarRatingInput component for interactive star selection. Include a textarea for comments with validation (max length, required field). Use the useAddReview mutation hook for submission with loading states and error handling. Show success toast on completion and trigger cache invalidation to refresh the reviews list. Only render the form when the user is authenticated and has purchased the product."
+        },
+        {
+          "path": "frontend/src/pages/ProductDetail.tsx",
+          "operation": "modify",
+          "description": "Wire in the ReviewForm component in the reviews section. Pass the productId prop and conditionally display the form based on authentication status and purchase verification (check if the buyer has any orders containing this product using getBuyerOrders). Position the form above the reviews list."
+        }
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "summary": "Add React Query hooks for review operations including useProductReviews to fetch reviews and useAddReview mutation for submitting reviews",
+      "acceptanceCriteria": [
+        "Hooks follow existing patterns in frontend/src/hooks/useQueries.ts",
+        "Proper cache invalidation occurs after review submission",
+        "Loading and error states are properly handled",
+        "Hooks integrate with the actor from useActor"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useQueries.ts",
+          "operation": "modify",
+          "description": "Add useProductReviews query hook that fetches reviews for a specific product using the getProductReviews backend capability. Add useAddReview mutation hook that submits a new review using the addReview backend capability. Follow existing patterns in the file for actor integration, error handling, and loading states. Ensure the mutation invalidates the product reviews query cache and the product average rating cache upon success."
+        }
+      ]
+    },
+    {
+      "id": "REQ-17",
+      "summary": "Create reusable UI components for star rating display (read-only) and star rating input (interactive) following the warm earth tone design system",
+      "acceptanceCriteria": [
+        "Components use the existing color palette with terracotta, sage green, and cream tones",
+        "Star icons are visually clear and accessible",
+        "Interactive rating component provides hover and click feedback",
+        "Components are responsive and work on mobile devices"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/reviews/StarRating.tsx",
+          "operation": "create",
+          "description": "Create a read-only star rating display component that shows 1-5 stars based on a numeric rating prop. Use star icons (filled and half-filled for fractional ratings) with colors from the warm earth tone palette (terracotta for filled stars). Include accessible labels and ensure responsive sizing. Export as StarRating."
+        },
+        {
+          "path": "frontend/src/components/reviews/StarRatingInput.tsx",
+          "operation": "create",
+          "description": "Create an interactive star rating input component that allows users to select 1-5 stars with hover and click feedback. Use the warm earth tone palette for hover states (sage green on hover, terracotta when selected). Include accessible labels and keyboard navigation support. Export as StarRatingInput and accept onChange callback prop."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "E-commerce marketplace platform similar to Amazon where sellers can list products and customers can purchase them",
+  "architectural_notes": [
+    "Multi-user system with seller and customer roles",
+    "Product catalog with listing capabilities",
+    "E-commerce transaction flow required"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-implement-user-registration-and-authentication-supporting-two-distinct-roles-sellers-and-buyers-allowing-users-to-choose-their-role-during-registration",
+      "title": "Implement user registration and authentication supporting two distinct roles: sellers and buyers, allowing users to choose their role during registration",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-seller-dashboard-where-sellers-can-add-new-products-with-name-description-price-category-and-image-upload-capability",
+      "title": "Create a seller dashboard where sellers can add new products with name, description, price, category, and image upload capability",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-seller-product-management-interface-allowing-sellers-to-view-edit-and-delete-their-own-product-listings",
+      "title": "Build a seller product management interface allowing sellers to view, edit, and delete their own product listings",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-public-product-catalog-page-displaying-all-available-products-from-all-sellers-with-filtering-by-category-and-search-functionality",
+      "title": "Create a public product catalog page displaying all available products from all sellers with filtering by category and search functionality",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-product-detail-pages-showing-full-product-information-including-seller-details-price-description-and-images",
+      "title": "Implement product detail pages showing full product information including seller details, price, description, and images",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-shopping-cart-system-allowing-buyers-to-add-products-view-cart-contents-update-quantities-and-remove-items",
+      "title": "Build a shopping cart system allowing buyers to add products, view cart contents, update quantities, and remove items",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-checkout-flow-where-buyers-can-review-their-cart-and-complete-purchases-with-order-confirmation",
+      "title": "Create a checkout flow where buyers can review their cart and complete purchases, with order confirmation",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-an-order-management-system-where-buyers-can-view-their-purchase-history-and-sellers-can-view-orders-for-their-products",
+      "title": "Implement an order management system where buyers can view their purchase history and sellers can view orders for their products",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-design-a-modern-professional-marketplace-interface-with-a-cohesive-visual-theme-featuring-warm-earth-tones-terracotta-sage-green-cream-with-clean-typography-and-spacious-layouts-that-convey-trust-and-ease-of-use",
+      "title": "Design a modern, professional marketplace interface with a cohesive visual theme featuring warm earth tones (terracotta, sage green, cream) with clean typography and spacious layouts that convey trust and ease of use",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-review-and-rating-display-to-the-productdetail-page-showing-individual-reviews-with-star-ratings-reviewer-names-timestamps-and-comments",
+      "title": "Add review and rating display to the ProductDetail page showing individual reviews with star ratings, reviewer names, timestamps, and comments",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-display-average-star-rating-and-review-count-on-productcard-components-in-the-catalog-and-search-results",
+      "title": "Display average star rating and review count on ProductCard components in the catalog and search results",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-review-submission-form-on-the-productdetail-page-that-allows-authenticated-buyers-who-have-purchased-the-product-to-submit-a-rating-1-5-stars-and-written-comment",
+      "title": "Create a review submission form on the ProductDetail page that allows authenticated buyers who have purchased the product to submit a rating (1-5 stars) and written comment",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-react-query-hooks-for-review-operations-including-useproductreviews-to-fetch-reviews-and-useaddreview-mutation-for-submitting-reviews",
+      "title": "Add React Query hooks for review operations including useProductReviews to fetch reviews and useAddReview mutation for submitting reviews",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-reusable-ui-components-for-star-rating-display-read-only-and-star-rating-input-interactive-following-the-warm-earth-tone-design-system",
+      "title": "Create reusable UI components for star rating display (read-only) and star rating input (interactive) following the warm earth tone design system",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Seller account functionality - ability to list and manage products",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Customer account functionality - ability to browse and purchase products",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Product listing and catalog system",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Shopping cart and checkout system",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Product reviews and ratings system",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Add a Review type to the backend data model with fields for reviewId (Text), productId (Text), buyerId (Principal), buyerName (Text), rating (1-5 stars as Nat8), comment (Text), and timestamp (Int)",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Implement backend functions to create a review (addReview) requiring buyer authentication and verification that the buyer has purchased the product",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Implement backend functions to retrieve reviews for a specific product (getProductReviews) and calculate average rating",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Marketplace Hub",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
